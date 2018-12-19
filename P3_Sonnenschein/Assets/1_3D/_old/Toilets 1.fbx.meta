@@ -1,0 +1,215 @@
+fileFormatVersion: 2
+guid: 44f678e084b49ff4dbafa1d9919a8033
+timeCreated: 1544111871
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Mesh
+    100002: "R\xF6hre"
+    100004: "R\xF6hre_1"
+    100006: "R\xF6hre_1_2"
+    100008: "R\xF6hre_1_3"
+    100010: "R\xF6hre_2"
+    100012: "R\xF6hre_3"
+    100014: Spiegel
+    100016: SpiegelRamen
+    100018: Toilet
+    100020: Toilet_1
+    100022: Toilet_2
+    100024: //RootNode
+    100026: "W\xFCrfel"
+    100028: "W\xFCrfel_1"
+    100030: "W\xFCrfel_1_2"
+    100032: "W\xFCrfel_1_3"
+    100034: "W\xFCrfel_1_4"
+    100036: "W\xFCrfel_2"
+    100038: "W\xFCrfel_2_2"
+    100040: "W\xFCrfel_2_3"
+    100042: "W\xFCrfel_2_4"
+    100044: "W\xFCrfel_3"
+    100046: "W\xFCrfel_4"
+    100048: "W\xFCrfel_6"
+    400000: Mesh
+    400002: "R\xF6hre"
+    400004: "R\xF6hre_1"
+    400006: "R\xF6hre_1_2"
+    400008: "R\xF6hre_1_3"
+    400010: "R\xF6hre_2"
+    400012: "R\xF6hre_3"
+    400014: Spiegel
+    400016: SpiegelRamen
+    400018: Toilet
+    400020: Toilet_1
+    400022: Toilet_2
+    400024: //RootNode
+    400026: "W\xFCrfel"
+    400028: "W\xFCrfel_1"
+    400030: "W\xFCrfel_1_2"
+    400032: "W\xFCrfel_1_3"
+    400034: "W\xFCrfel_1_4"
+    400036: "W\xFCrfel_2"
+    400038: "W\xFCrfel_2_2"
+    400040: "W\xFCrfel_2_3"
+    400042: "W\xFCrfel_2_4"
+    400044: "W\xFCrfel_3"
+    400046: "W\xFCrfel_4"
+    400048: "W\xFCrfel_6"
+    2300000: "R\xF6hre"
+    2300002: "R\xF6hre_1"
+    2300004: "R\xF6hre_1_2"
+    2300006: "R\xF6hre_1_3"
+    2300008: "R\xF6hre_2"
+    2300010: "R\xF6hre_3"
+    2300012: Spiegel
+    2300014: SpiegelRamen
+    2300016: "W\xFCrfel"
+    2300018: "W\xFCrfel_1"
+    2300020: "W\xFCrfel_1_2"
+    2300022: "W\xFCrfel_1_3"
+    2300024: "W\xFCrfel_1_4"
+    2300026: "W\xFCrfel_2"
+    2300028: "W\xFCrfel_2_2"
+    2300030: "W\xFCrfel_2_3"
+    2300032: "W\xFCrfel_2_4"
+    2300034: "W\xFCrfel_3"
+    2300036: "W\xFCrfel_4"
+    2300038: "W\xFCrfel_6"
+    3300000: "R\xF6hre"
+    3300002: "R\xF6hre_1"
+    3300004: "R\xF6hre_1_2"
+    3300006: "R\xF6hre_1_3"
+    3300008: "R\xF6hre_2"
+    3300010: "R\xF6hre_3"
+    3300012: Spiegel
+    3300014: SpiegelRamen
+    3300016: "W\xFCrfel"
+    3300018: "W\xFCrfel_1"
+    3300020: "W\xFCrfel_1_2"
+    3300022: "W\xFCrfel_1_3"
+    3300024: "W\xFCrfel_1_4"
+    3300026: "W\xFCrfel_2"
+    3300028: "W\xFCrfel_2_2"
+    3300030: "W\xFCrfel_2_3"
+    3300032: "W\xFCrfel_2_4"
+    3300034: "W\xFCrfel_3"
+    3300036: "W\xFCrfel_4"
+    3300038: "W\xFCrfel_6"
+    4300000: "W\xFCrfel"
+    4300002: SpiegelRamen
+    4300004: Spiegel
+    4300006: "R\xF6hre_1"
+    4300008: "R\xF6hre"
+    4300010: "W\xFCrfel_1"
+    4300012: "W\xFCrfel_2"
+    4300014: "W\xFCrfel_2_2"
+    4300016: "R\xF6hre_1_2"
+    4300018: "R\xF6hre_2"
+    4300020: "W\xFCrfel_1_2"
+    4300022: "W\xFCrfel_2_3"
+    4300024: "W\xFCrfel_3"
+    4300026: "R\xF6hre_1_3"
+    4300028: "R\xF6hre_3"
+    4300030: "W\xFCrfel_1_3"
+    4300032: "W\xFCrfel_2_4"
+    4300034: "W\xFCrfel_4"
+    4300036: "W\xFCrfel_6"
+    4300038: "W\xFCrfel_1_4"
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat
+    second: {fileID: 2100000, guid: d0dee268d6f1a4644824f494c8f9dff4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.1
+    second: {fileID: 2100000, guid: b7eeae777156661429d280e53b96dbbf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.2
+    second: {fileID: 2100000, guid: 1963b2ad68332bf40854e74951fd7e29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spiegel
+    second: {fileID: 2100000, guid: 1f0ff06f2422fed4a9a5ea1e801613dc, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
