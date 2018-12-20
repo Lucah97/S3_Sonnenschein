@@ -11,6 +11,22 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1805771431458714}
   m_IsPrefabAsset: 1
+--- !u!1 &1013573617903528
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4894871582187290}
+  - component: {fileID: 182774096433982382}
+  m_Layer: 0
+  m_Name: WindZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1229383201239484
 GameObject:
   m_ObjectHideFlags: 1
@@ -185,7 +201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4087568165493944
 Transform:
   m_ObjectHideFlags: 1
@@ -211,7 +227,7 @@ Transform:
   m_Children:
   - {fileID: 4443495414382232}
   m_Father: {fileID: 4859872716085646}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4135794382805682
 Transform:
@@ -219,12 +235,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1987484068770076}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4859872716085646}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4443495414382232
 Transform:
@@ -246,7 +262,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1229383201239484}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.136}
   m_LocalScale: {x: 0.23099999, y: 0.23099999, z: 0.23099999}
   m_Children: []
   m_Father: {fileID: 4859872716085646}
@@ -259,7 +275,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1805771431458714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 64.8, y: -3.07, z: -0.00016242557}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00016242557}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4544454196038120}
@@ -287,7 +303,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1892067767815586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.136, z: 0}
   m_LocalScale: {x: 0.23100406, y: 0.231004, z: 0.231004}
   m_Children: []
   m_Father: {fileID: 4859872716085646}
@@ -300,18 +316,32 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1489443838992664}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.568}
   m_LocalScale: {x: 13.333332, y: 13.333332, z: 13.333332}
   m_Children:
   - {fileID: 4821118925931046}
   - {fileID: 4963797964475858}
   - {fileID: 4520443299963848}
   - {fileID: 4087568165493944}
+  - {fileID: 4894871582187290}
   - {fileID: 4135794382805682}
   - {fileID: 4121066535691678}
   m_Father: {fileID: 4526033004309978}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 90}
+--- !u!4 &4894871582187290
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1013573617903528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4859872716085646}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4963797964475858
 Transform:
   m_ObjectHideFlags: 1
@@ -319,7 +349,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285552426443310}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.136, z: 0}
   m_LocalScale: {x: 0.23099999, y: 0.23099999, z: 0.23099999}
   m_Children: []
   m_Father: {fileID: 4859872716085646}
@@ -470,13 +500,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1489443838992664}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a26303925b48bc14e879db71eaf9773c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 4087568165493944}
-  speed: 1
+  target: {fileID: 0}
+  speed: 5
 --- !u!114 &114838018024409518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -538,10 +568,23 @@ WindZone:
   m_GameObject: {fileID: 1987484068770076}
   m_Enabled: 1
   m_Mode: 1
-  m_Radius: 12
+  m_Radius: 2.83
   m_WindMain: 0.5
   m_WindTurbulence: 0.5
   m_WindPulseMagnitude: 0.5
+  m_WindPulseFrequency: 0.01
+--- !u!182 &182774096433982382
+WindZone:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1013573617903528}
+  m_Enabled: 1
+  m_Mode: 1
+  m_Radius: 20
+  m_WindMain: 0.5
+  m_WindTurbulence: 1
+  m_WindPulseMagnitude: 0
   m_WindPulseFrequency: 0.01
 --- !u!198 &198042323535021234
 ParticleSystem:
@@ -675,7 +718,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6.311935
+      scalar: 6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2737,7 +2780,7 @@ ParticleSystem:
     randomizePerFrame: 0
   ExternalForcesModule:
     enabled: 1
-    multiplier: 15
+    multiplier: 100
   ClampVelocityModule:
     enabled: 0
     x:
@@ -9741,7 +9784,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6.311935
+      scalar: 6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -11803,7 +11846,7 @@ ParticleSystem:
     randomizePerFrame: 0
   ExternalForcesModule:
     enabled: 1
-    multiplier: 15
+    multiplier: 100
   ClampVelocityModule:
     enabled: 0
     x:
@@ -14274,7 +14317,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6.311935
+      scalar: 6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -16336,7 +16379,7 @@ ParticleSystem:
     randomizePerFrame: 0
   ExternalForcesModule:
     enabled: 1
-    multiplier: 15
+    multiplier: 100
   ClampVelocityModule:
     enabled: 0
     x:
