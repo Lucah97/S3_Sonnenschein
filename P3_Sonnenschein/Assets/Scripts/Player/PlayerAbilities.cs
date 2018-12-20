@@ -167,6 +167,7 @@ public class PlayerAbilities : MonoBehaviour {
             pm.setZdepth(curZ, true);
             pm.setAllowIinput(false);
             pm.freezeVelocity();
+
         }
     }
 
