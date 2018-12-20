@@ -18,12 +18,20 @@ public class PictureFrameBehaviour : MonoBehaviour {
 
     private bool hasSpedUp = false;
 
+    private PlayerMovement pm;
+
     private Material holeMat;
 
 	void Start () {
         holeMat = transform.GetChild(0).GetComponent<Renderer>().material;
         curTiling = holeMat.GetTextureScale("_MainTex").x;
         curOffset = holeMat.GetTextureOffset("_MainTex").x;
+
+        pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+
+        //Disable Collider
+        pm.GetComponent<Collider>().enabled = false;
+        pm.setApplyGravity(false);
     }
 	
 	void Update () {
@@ -40,9 +48,12 @@ public class PictureFrameBehaviour : MonoBehaviour {
         //Check if finished
         if (curTiling < minTiling)
         {
-            PlayerMovement pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
             pm.returnToLastZdepth();
             pm.setAllowIinput(true);
+
+            //Enable Collider
+            pm.GetComponent<Collider>().enabled = true;
+            pm.setApplyGravity(true);
 
             Destroy(this.gameObject);
         }

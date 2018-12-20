@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private float lastZdepth;
     private bool canonMode = false;
+    private bool applyGravity = true;
 
     [Header("Collision Properties")]
     [Range(60f, 90f)]
@@ -70,9 +71,12 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         //Add Gravity
-        Vector3 nVel = rb.velocity;
-        nVel -= new Vector3(0, Mathf.Abs(gravity), 0);
-        rb.velocity = nVel;
+        if (applyGravity)
+        {
+            Vector3 nVel = rb.velocity;
+            nVel -= new Vector3(0, Mathf.Abs(gravity), 0);
+            rb.velocity = nVel;
+        }
 
         //Z-Depth adjustment (Stairs)
         adjustZdepth();
@@ -349,5 +353,10 @@ public class PlayerMovement : MonoBehaviour {
     public void setVelocity(Vector3 nVel)
     {
         rb.velocity = nVel;
+    }
+
+    public void setApplyGravity(bool g)
+    {
+        applyGravity = g;
     }
 }
