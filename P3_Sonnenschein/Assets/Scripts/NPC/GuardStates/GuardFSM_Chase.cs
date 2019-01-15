@@ -15,6 +15,8 @@ public class GuardFSM_Chase : NPC_Base {
         base.OnStateEnter(animator, stateInfo, layerIndex);
         setValues(0.55f, 7f, Color.red);
 
+        npc = animator.gameObject;
+
         //Spawn Symbol
         StateSymbolSpawner spawner = animator.gameObject.GetComponent<StateSymbolSpawner>();
         spawner.spawnSymbol(1);
@@ -22,22 +24,26 @@ public class GuardFSM_Chase : NPC_Base {
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        /*
-        Vector3 aimPos = player.transform.position;
-        aimPos.y = npc.transform.position.y;
-        Vector3 dir = aimPos - npc.transform.position;
-        npc.transform.rotation = Quaternion.Slerp(npc.transform.rotation,
-                                                    Quaternion.LookRotation(dir),
-                                                    Time.deltaTime * rotationSpeed);
+        //Check deleted Obj
+        if (followObj == null)
+        {
+            animator.SetBool("objDestroyed", true);
 
-        npc.transform.Translate(0, 0, Time.deltaTime * movementSpeed);*/
-        npc.GetComponent<NavMeshAgent>().SetDestination(player.transform.position);
+            Vector3[] zPoints = new Vector3[2];
+            zPoints[0] = Vector3.zero;
+            zPoints[1] = Vector3.zero;
+            npc.transform.GetChild(0).GetComponent<LineRenderer>().SetPositions(zPoints);
+        }
+        else
+        {
+            npc.GetComponent<NavMeshAgent>().SetDestination(followObj.transform.position);
+        }
     }
 
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
 
-    }
+    //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {

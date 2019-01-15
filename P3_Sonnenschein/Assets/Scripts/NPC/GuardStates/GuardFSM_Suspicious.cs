@@ -26,15 +26,17 @@ public class GuardFSM_Suspicious : NPC_Base {
         spawner = animator.gameObject.GetComponent<StateSymbolSpawner>();
         spawner.spawnSymbol(0);
 
+        npc = animator.gameObject;
+
         //Creating suspicious points
         susPoints = new Vector3[Random.Range(5, 8)];
         for (int i=0; i<susPoints.Length; i++)
         {
-            susPoints[i] = player.transform.position;
+            susPoints[i] = followObj.transform.position;
             susPoints[i].y = npc.transform.position.y;
             susPoints[i].x += Random.Range(-accuracy, accuracy);
         }
-        susPoints[0] = player.transform.position;
+        susPoints[0] = followObj.transform.position;
         susPoints[0].y = npc.transform.position.y;
         curSpot = 0;
     }
@@ -57,21 +59,15 @@ public class GuardFSM_Suspicious : NPC_Base {
         }
 
         if (curSpot < susPoints.Length)
-        {/*
-            Vector3 dir = susPoints[curSpot] - npc.transform.position;
-            npc.transform.rotation = Quaternion.Slerp(npc.transform.rotation,
-                                                        Quaternion.LookRotation(dir),
-                                                        Time.deltaTime * rotationSpeed);
-
-            npc.transform.Translate(0, 0, Time.deltaTime * movementSpeed);*/
+        {
             npc.GetComponent<NavMeshAgent>().SetDestination(susPoints[curSpot]);
         }
     }
 
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
 
-    }
+    //}
     // OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
     //

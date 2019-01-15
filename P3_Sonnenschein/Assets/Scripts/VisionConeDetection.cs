@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class VisionConeDetection : MonoBehaviour
 {
-    private Transform player = null;
+    private Transform followObj = null;
     private Transform legs = null;
     private Transform originPoint;
     private LineRenderer lineRen;
@@ -33,7 +33,7 @@ public class VisionConeDetection : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (player != null)
+        if (followObj != null)
         {
             detectionProgress += (detectionSpeed * Time.deltaTime);
             detectionProgress = Mathf.Clamp(detectionProgress, 0f, 100f);
@@ -53,21 +53,31 @@ public class VisionConeDetection : MonoBehaviour
         {
             if (!col.GetComponent<PlayerAbilities>().isHidden())
             {
-                player = col.gameObject.transform;
+                followObj = col.gameObject.transform;
 
                 detectionProgress = 0f;
                 setLinePoints(ref lineRen);
                 lineRen.enabled = true;
             }
         }
+
+        if ((col.gameObject.tag == "Legs"))
+        {
+            followObj = col.gameObject.transform;
+
+            detectionProgress = 0f;
+            setLinePoints(ref lineRen);
+            lineRen.enabled = true;
+        }
     }
+
 
     void OnTriggerExit(Collider col)
     {
         if ((col.gameObject.tag == "Player") || (col.gameObject.tag == "Legs"))
         {    
             lineRen.enabled = false;
-            player = null;
+            //followObj = null;
         }
     }
 
@@ -88,7 +98,7 @@ public class VisionConeDetection : MonoBehaviour
     {
         Vector3[] linePoints = new Vector3[2];
         linePoints[0] = originPoint.position;
-        linePoints[1] = GetComponent<Collider>().ClosestPoint(player.transform.position);
+        linePoints[1] = GetComponent<Collider>().ClosestPoint(followObj.transform.position);
 
         //Progress Vector
         Vector3 dir = (linePoints[0] - linePoints[1]).normalized;
@@ -108,16 +118,38 @@ public class VisionConeDetection : MonoBehaviour
         if (points != null)
         {
             float mult = 1f;
-            if (player.CompareTag("Legs"))
+            if (followObj.CompareTag("Legs"))
             {
                 mult = 3f;
             }
             anim.SetFloat("ConeDistance", Vector3.Distance(points[0], points[1]) * mult);
-            anim.SetInteger("chaseID", player.GetInstanceID());
+            anim.SetInteger("chaseID", followObj.GetInstanceID());
         }
         else
         {
             anim.SetFloat("ConeDistance", 99f);
         }
+    }
+
+    public Transform getFollowObj()
+    {
+        if (followObj != null)
+        {
+            Debug.Log("First one");
+            return followObj;
+        }
+        else
+        {
+            Debug.Log("Second one");
+            return GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        
+    }
+
+    public void folInfo()
+    {
+        try { Debug.Log(followObj.name); }
+        catch { Debug.Log("NONE"); }
+        
     }
 }

@@ -12,11 +12,15 @@ public class LegBehaviour : MonoBehaviour {
 
     private float curTime = 0f;
     public float maxTime;
+    public float timeAfterLeadingEnemy = 2.3f;
+    public float speedMultAfterLeadingEnemy = 2.6f;
 
     private int curBumps = 0;
     public int maxBumps;
 
     public float collisionMult;
+
+    private bool leadingEnemy = false;
 
     private Rigidbody rb;
     private StateSymbolSpawner sss;
@@ -67,6 +71,17 @@ public class LegBehaviour : MonoBehaviour {
                 movementDirection = !movementDirection;
                 curBumps++;
             }
+        }
+    }
+
+    //Hit Enemy
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy") && (!leadingEnemy))
+        {
+            leadingEnemy = true;
+            movementSpeed *= speedMultAfterLeadingEnemy;
+            maxTime = curTime + timeAfterLeadingEnemy;
         }
     }
 

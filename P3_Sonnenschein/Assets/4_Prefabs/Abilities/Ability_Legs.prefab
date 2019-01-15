@@ -594,6 +594,8 @@ MonoBehaviour:
   movementSpeed: 3.35
   movementDirection: 0
   maxTime: 25
+  timeAfterLeadingEnemy: 4.1
+  speedMultAfterLeadingEnemy: 2.6
   maxBumps: 4
   collisionMult: 0.75
 --- !u!114 &114975907106936964

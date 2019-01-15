@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class NPC_Base : StateMachineBehaviour
 {
-    public GameObject player;
+    public GameObject followObj;
     public GameObject npc;
     public GameObject chaseObj;
 
@@ -14,12 +15,20 @@ public class NPC_Base : StateMachineBehaviour
     //### Built-In Functions ###
     public void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        //
     }
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        followObj = animator.transform.GetChild(0).GetComponent<VisionConeDetection>().getFollowObj().gameObject;
+
         npc = animator.gameObject;
+
+        //Set movement/rotation Speed
+        npc.GetComponent<NavMeshAgent>().speed = movementSpeed;
+        npc.GetComponent<NavMeshAgent>().angularSpeed = rotationSpeed;
+
+
         animator.SetBool("hasSearched", false);
     }
 

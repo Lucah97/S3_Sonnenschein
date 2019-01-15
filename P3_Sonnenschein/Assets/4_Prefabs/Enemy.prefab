@@ -26,9 +26,10 @@ GameObject:
   - component: {fileID: 114699562909206110}
   - component: {fileID: 114785912173374476}
   - component: {fileID: 195898050053746192}
+  - component: {fileID: 114394382263864194}
   m_Layer: 10
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +49,7 @@ GameObject:
   - component: {fileID: 114767274179708402}
   m_Layer: 0
   m_Name: BaicVisionCone
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,9 +75,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1153888689212614}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 85.26, y: -14.04, z: -0.32}
-  m_LocalScale: {x: 0.947049, y: 0.947049, z: 0.947049}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 44.64, y: -11.176968, z: -5.5243034}
+  m_LocalScale: {x: 0.9470495, y: 0.947049, z: 0.9470495}
   m_Children:
   - {fileID: 4788498538668954}
   m_Father: {fileID: 0}
@@ -225,6 +226,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114394382263864194
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1153888689212614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451f9323745f506498974b0b56f01070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1.5
 --- !u!114 &114699562909206110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -382,10 +395,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.50000024
-  m_Speed: 3.5
+  m_Speed: 2.1
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 520
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
