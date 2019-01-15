@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class GuardFSM_Suspicious : NPC_Base {
@@ -56,13 +57,14 @@ public class GuardFSM_Suspicious : NPC_Base {
         }
 
         if (curSpot < susPoints.Length)
-        {
+        {/*
             Vector3 dir = susPoints[curSpot] - npc.transform.position;
             npc.transform.rotation = Quaternion.Slerp(npc.transform.rotation,
                                                         Quaternion.LookRotation(dir),
                                                         Time.deltaTime * rotationSpeed);
 
-            npc.transform.Translate(0, 0, Time.deltaTime * movementSpeed);
+            npc.transform.Translate(0, 0, Time.deltaTime * movementSpeed);*/
+            npc.GetComponent<NavMeshAgent>().SetDestination(susPoints[curSpot]);
         }
     }
 

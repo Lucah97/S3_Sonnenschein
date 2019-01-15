@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class GuardFSM_Chase : NPC_Base {
@@ -21,6 +22,7 @@ public class GuardFSM_Chase : NPC_Base {
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        /*
         Vector3 aimPos = player.transform.position;
         aimPos.y = npc.transform.position.y;
         Vector3 dir = aimPos - npc.transform.position;
@@ -28,7 +30,8 @@ public class GuardFSM_Chase : NPC_Base {
                                                     Quaternion.LookRotation(dir),
                                                     Time.deltaTime * rotationSpeed);
 
-        npc.transform.Translate(0, 0, Time.deltaTime * movementSpeed);
+        npc.transform.Translate(0, 0, Time.deltaTime * movementSpeed);*/
+        npc.GetComponent<NavMeshAgent>().SetDestination(player.transform.position);
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

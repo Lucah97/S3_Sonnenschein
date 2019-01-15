@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class GuardFSM_Patrol : NPC_Base {
@@ -34,7 +35,7 @@ public class GuardFSM_Patrol : NPC_Base {
                 curSpot = 0;
             }
         }
-
+        /*
         Vector3 dir = patrolSpots[curSpot].transform.position - npc.transform.position;
         npc.transform.rotation = Quaternion.Slerp(npc.transform.rotation, 
                                                     Quaternion.LookRotation(dir),
@@ -42,7 +43,8 @@ public class GuardFSM_Patrol : NPC_Base {
 
                                  
 
-        npc.transform.Translate(0, 0, Time.deltaTime * movementSpeed);
+        npc.transform.Translate(0, 0, Time.deltaTime * movementSpeed);*/
+        npc.GetComponent<NavMeshAgent>().SetDestination(patrolSpots[curSpot].transform.position);
 	}
 
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
