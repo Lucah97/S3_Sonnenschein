@@ -20,6 +20,9 @@ public class GuardFSM_Patrol : NPC_Base {
         patrolSpots = animator.GetComponent<GimmeDemPatrolSpots>().patrolSpots;
         setValues(0.19f, 8f, Color.blue);
 
+        npc = animator.gameObject;
+        animator.SetBool("objDestroyed", false);
+
         //Spawn Symbol
         StateSymbolSpawner spawner = animator.gameObject.GetComponent<StateSymbolSpawner>();
         spawner.spawnSymbol(2);
@@ -27,6 +30,11 @@ public class GuardFSM_Patrol : NPC_Base {
 
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         if (patrolSpots.Length == 0) return;
+        npc = animator.gameObject;
+        patrolSpots = animator.GetComponent<GimmeDemPatrolSpots>().patrolSpots;
+
+        Debug.Log(npc.name);
+        Debug.Log(patrolSpots[0].name);
         if (Vector3.Distance(patrolSpots[curSpot].transform.position, npc.transform.position) < distanceCutOff)
         {
             curSpot++;
@@ -35,21 +43,12 @@ public class GuardFSM_Patrol : NPC_Base {
                 curSpot = 0;
             }
         }
-        /*
-        Vector3 dir = patrolSpots[curSpot].transform.position - npc.transform.position;
-        npc.transform.rotation = Quaternion.Slerp(npc.transform.rotation, 
-                                                    Quaternion.LookRotation(dir),
-                                                    Time.deltaTime * rotationSpeed);
-
-                                 
-
-        npc.transform.Translate(0, 0, Time.deltaTime * movementSpeed);*/
         npc.GetComponent<NavMeshAgent>().SetDestination(patrolSpots[curSpot].transform.position);
 	}
 
-	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+	//override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 	
-	}
+	//}
 
 
 

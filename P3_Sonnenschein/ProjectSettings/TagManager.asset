@@ -10,6 +10,7 @@ TagManager:
   - Canon
   - CamZone
   - deinemama
+  - Enemy
   layers:
   - Default
   - TransparentFX
