@@ -268,7 +268,7 @@ MeshCollider:
   m_GameObject: {fileID: 1413218307312868}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -285,9 +285,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1e77a26ba2456468d541cd9a5ee388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spamDirection: 0
+  speedLerpSpeed: 1
   addTiling: -0.25
   addOffset: 0.1253
-  curSpeed: 5
+  curSpeed: 6.5
   endSpeed: 0.1
   speedDecrease: 1.5
   minTiling: 0.027

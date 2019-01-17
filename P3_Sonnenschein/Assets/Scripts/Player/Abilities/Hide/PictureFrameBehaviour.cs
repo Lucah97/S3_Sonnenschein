@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class PictureFrameBehaviour : MonoBehaviour {
 
+    public bool spamDirection = true;
+    public float speedLerpSpeed;
+
     public float addTiling;
     public float addOffset;
 
     public float curSpeed;
     public float endSpeed;
+    private float normCurSpeed;
+    private float normEndSpeed;
+
     public float speedDecrease;
 
     public float minTiling;
@@ -29,15 +35,15 @@ public class PictureFrameBehaviour : MonoBehaviour {
 
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
 
+        normCurSpeed = curSpeed;
+        normEndSpeed = endSpeed;
+
         //Disable Collider
         pm.GetComponent<Collider>().enabled = false;
         pm.setApplyGravity(false);
     }
 	
 	void Update () {
-        //Calculate speed
-        curSpeed = Mathf.Lerp(curSpeed, endSpeed, speedDecrease * Time.deltaTime);
-
         //Adjust texture tiling and offset
         curTiling += (addTiling * curSpeed * Time.deltaTime);
         curOffset += (addOffset * curSpeed * Time.deltaTime);
@@ -58,16 +64,22 @@ public class PictureFrameBehaviour : MonoBehaviour {
             Destroy(this.gameObject);
         }
 
-        //Speed up by Jump
+        //Adjust speed by jumping
         if ((Input.GetAxis("Jump") == 1) && (!hasSpedUp))
         {
-            curSpeed *= 1.5f;
-            endSpeed *= 1.5f;
+            curSpeed *= (spamDirection ? 1.5f : 0.75f);
+            endSpeed *= (spamDirection ? 1f : 1.32f);
             hasSpedUp = true;
         }
         if (Input.GetAxis("Jump") == 0)
         {
             hasSpedUp = false;
+
+            //Calculate speed
+            curSpeed = Mathf.Lerp(curSpeed, endSpeed, speedDecrease * Time.deltaTime);
+
+            //Adjust endSpeed
+            endSpeed = Mathf.Lerp(endSpeed, (normEndSpeed), (Time.deltaTime * speedDecrease));
         }
 
     }
