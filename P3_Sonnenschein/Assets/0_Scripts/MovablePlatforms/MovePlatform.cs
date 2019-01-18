@@ -6,14 +6,30 @@ using UnityEngine;
 public class MovePlatform : MonoBehaviour, InterfaceLetherTrigger {
 
 	public Vector3 moveDist = new Vector3(4,0,0);
-	private Vector3 tempPos;
-	
-	public void OnSwitchTrigger()
+    public float movementSpeed;
+    public float distanceCutOff;
+
+    private Vector3 desPos;
+    private Vector3 origPos;
+
+    private void Start()
+    {
+        origPos = transform.position;
+        desPos = transform.position;
+    }
+
+    private void Update()
+    {
+        if (Vector3.Distance(transform.position, desPos) > distanceCutOff)
+        {
+            transform.position = Vector3.Lerp(transform.position, desPos, Time.deltaTime * movementSpeed);
+        }
+    }
+
+    public void OnSwitchTrigger()
 	{
-		Debug.Log("I get called");
-		tempPos = transform.position;
-		tempPos = tempPos + (moveDist);
-        transform.position = tempPos;
+        desPos = origPos;
+        desPos += moveDist;
 
         moveDist *= -1;
 	}
