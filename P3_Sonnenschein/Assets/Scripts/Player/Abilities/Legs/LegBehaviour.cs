@@ -20,6 +20,8 @@ public class LegBehaviour : MonoBehaviour {
 
     public float collisionMult;
 
+    public GameObject despawnCloud;
+
     private bool leadingEnemy = false;
 
     private Rigidbody rb;
@@ -105,8 +107,22 @@ public class LegBehaviour : MonoBehaviour {
         }
     }
 
-    private void deSpawn()
+    public void deSpawn()
     {
+        //Disable Collider
+        GetComponent<Collider>().enabled = false;
+
+        //Reset Tag
+        this.tag = "Untagged";
+
+        //Spawn Cloud effect
+        if (despawnCloud != null)
+        {
+            Instantiate(despawnCloud, transform.position, despawnCloud.transform.rotation);
+        }
+
+        //> Later: Leg Animation <//
+
         Destroy(this.gameObject);
     }
 }

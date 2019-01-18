@@ -121,8 +121,15 @@ public class PlayerAbilities : MonoBehaviour {
         dir = Mathf.Clamp(dir, -1, 1);
 
         //Check if legs already exist
-        if ((GameObject.FindGameObjectWithTag("Legs") == null) && (GameObject.FindGameObjectWithTag("Canvas") == null))
-        { 
+        if (GameObject.FindGameObjectWithTag("Canvas") == null)
+        {
+            //Check if Legs exist
+            GameObject nLegs = GameObject.FindGameObjectWithTag("Legs");
+            if (nLegs != null)
+            {
+                nLegs.GetComponent<LegBehaviour>().deSpawn();
+            }
+
             Vector3 desiredPosition = transform.position;
             desiredPosition.x += ((legSpawnDistance * transform.localScale.x) * dir);
 
@@ -167,7 +174,6 @@ public class PlayerAbilities : MonoBehaviour {
             pm.setZdepth(curZ, true);
             pm.setAllowIinput(false);
             pm.freezeVelocity();
-
         }
     }
 
