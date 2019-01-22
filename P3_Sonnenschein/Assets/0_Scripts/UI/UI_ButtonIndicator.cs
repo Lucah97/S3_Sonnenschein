@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class UI_ButtonIndicator : MonoBehaviour, UI_Obj_Interface {
 
+    private Vector3 origRot;
+    private Vector3 origCale;
+    private Vector3 curOffset;
+
+    private void Start()
+    {
+        origRot = transform.rotation.eulerAngles;
+        origCale = transform.localScale;
+    }
+
     public void setAnchorObject(GameObject obj, Vector3 offset)
     {
         transform.parent = obj.transform;
         transform.localPosition = offset;
+        curOffset = offset;
     }
 
 	public void setImg(Texture2D imgTex)
@@ -25,7 +36,8 @@ public class UI_ButtonIndicator : MonoBehaviour, UI_Obj_Interface {
 
     public void LateUpdate()
     {
-        transform.rotation = Quaternion.Euler(new Vector3(90, -90, 90));
-        transform.localScale = new Vector3(0.3330514f, 0.3330514f, 0.1132375f);
+        transform.rotation = Quaternion.Euler(origRot);
+        transform.localScale = origCale;
+        transform.position = transform.parent.position + curOffset;
     }
 }
