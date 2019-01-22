@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Spawner : MonoBehaviour {
+public class UI_Spawner : MonoBehaviour
+{
 
     public static UI_Spawner instance;
 
@@ -22,11 +23,13 @@ public class UI_Spawner : MonoBehaviour {
         {
             instance = this;
         }
+
+        spawnedElements = new List<GameObject>();
     }
 
-    public void spawn(UI_Types t, Ctrl_Buttons b, string text, GameObject anchor, Vector3 offset)
+    public GameObject spawn(UI_Types t, Ctrl_Buttons b, string text, GameObject anchor, Vector3 offset)
     {
-        GameObject UIobj;
+        GameObject UIobj = new GameObject();
         Texture2D curButton;
 
         UIobj = Instantiate(UI_Prefabs[(int)t]);
@@ -36,7 +39,9 @@ public class UI_Spawner : MonoBehaviour {
         UIobj.GetComponent<UI_Obj_Interface>().setImg(curButton);
         UIobj.GetComponent<UI_Obj_Interface>().setAnchorObject(anchor, offset);
 
-        //spawnedElements.Add(UIobj);
+        spawnedElements.Add(UIobj);
+
+        return UIobj;
     }
 }
 

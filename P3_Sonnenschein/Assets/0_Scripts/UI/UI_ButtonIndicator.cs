@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_ButtonIndicator : MonoBehaviour, UI_Obj_Interface {
+public class UI_ButtonIndicator : MonoBehaviour, UI_Obj_Interface
+{
 
     private Vector3 origRot;
     private Vector3 origCale;
@@ -21,7 +22,7 @@ public class UI_ButtonIndicator : MonoBehaviour, UI_Obj_Interface {
         curOffset = offset;
     }
 
-	public void setImg(Texture2D imgTex)
+    public void setImg(Texture2D imgTex)
     {
         Material buttonMat = new Material(Shader.Find("Unlit/Transparent Cutout"));
         buttonMat.SetTexture("_MainTex", imgTex);
