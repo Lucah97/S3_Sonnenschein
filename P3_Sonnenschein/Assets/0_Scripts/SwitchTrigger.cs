@@ -64,11 +64,7 @@ public class SwitchTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-<<<<<<< HEAD
         if (other.CompareTag("Player"))
-=======
-        if(other.CompareTag("Player"))
->>>>>>> master
         {
             if (curMessage != null)
             {
