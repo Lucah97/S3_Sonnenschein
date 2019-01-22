@@ -28,9 +28,6 @@ public class MovePlatform : MonoBehaviour, InterfaceLetherTrigger {
 
     public void OnSwitchTrigger()
 	{
-        desPos = origPos;
-        desPos += moveDist;
-
-        moveDist *= -1;
+        desPos = (desPos == origPos) ? origPos + moveDist : origPos;
 	}
 }
