@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: dacbeb815f3f3c34290bdaca0fe9c47a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Nimbus Sans L
+  fontNames:
+  - Nimbus Sans L
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: cbed966291e7acf42a71f0bc1578cb27, type: 3}
+  - {fileID: 12800000, guid: 33554aa6a6681844dadd72afd02b3057, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
