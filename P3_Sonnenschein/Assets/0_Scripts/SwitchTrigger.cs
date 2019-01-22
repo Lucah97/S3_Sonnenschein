@@ -16,6 +16,8 @@ public class SwitchTrigger : MonoBehaviour
     private float desiredDeg;
     private bool hasBeenActivated = false;
 
+    private GameObject curMessage;
+
     private void Start()
     {
         dickTransform = transform.GetChild(0);
@@ -34,7 +36,7 @@ public class SwitchTrigger : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-	{
+    {
         if (other.CompareTag("Legs"))
         {
             if ((!repeatable && !hasBeenActivated) || (repeatable))
@@ -50,7 +52,27 @@ public class SwitchTrigger : MonoBehaviour
                 }
             }
         }
-	}
+
+        if (other.CompareTag("Player"))
+        {
+            if (curMessage == null)
+            {
+                curMessage = UI_Spawner.instance.spawn(UI_Types.ButtonIndicator, Ctrl_Buttons.X, "Flip Switch", GameObject.FindGameObjectWithTag("Player"), new Vector3(0, 2, 0));
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            if (curMessage != null)
+            {
+                GameObject.Destroy(curMessage);
+                curMessage = null;
+            }
+        }
+    }
 
     public void flipDick()
     {

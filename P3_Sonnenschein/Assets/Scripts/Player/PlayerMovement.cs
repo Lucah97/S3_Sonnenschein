@@ -51,14 +51,6 @@ public class PlayerMovement : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        //DEBUGGG
-
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            UI_Spawner.instance.spawn(UI_Types.ButtonIndicator, Ctrl_Buttons.X, "Place Canvas", GameObject.FindGameObjectWithTag("Player"), new Vector3(0, 2, 0));
-        }
-
-
         if (allowInput)
         {
             processInput();
